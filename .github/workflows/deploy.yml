@@ -32,6 +32,11 @@ jobs:
       with : 
         node-version: '18.x'
 
+    - name: Set up Git
+      run: |
+        git config --global user.email "itzabhinavarya@gmail.com"
+        git config --global user.name "itzabhinavarya"
+
     - name : Install gh-pages
       run : npm install gh-pages --save-dev
 
