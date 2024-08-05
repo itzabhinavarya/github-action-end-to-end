@@ -26,3 +26,16 @@ jobs:
 
     - name: Build the code
       run: npm run build
+
+    - name : Deploy to Github Pages
+      uses : actions/setup-node@v3
+      with : 
+        node-version: '18.x'
+
+    - name : Install gh-pages
+      run : npm install gh-pages --save-dev
+
+    - name : Deploy
+      env : 
+        GH_TOKEN : ${{ secrets.GITHUB_TOKEN }}
+      run : npm run deploy
