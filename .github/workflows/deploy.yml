@@ -8,3 +8,12 @@ jobs:
     steps:
       - name: Checking Node Version
         run: npm --version
+
+      - name: Stage 1 > Installing Dependencies - Frontend
+        run: echo 'Stage 1 > Installing Dependencies - Frontend😋'
+
+      - name: Stage 2 > Building Frontend
+        run: echo 'Building Frontend > 😎'
+
+      - name: Stage 3 > Pulling from github and deploying Backing
+        run: echo 'Stage 3 > Pulling from github and deploying Backing 🤩'
