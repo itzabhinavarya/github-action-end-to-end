@@ -1,46 +1,10 @@
-name: Build React App
+name : Learning Github Action CI/CD
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+on: [push]
 
-jobs:
+jobs: 
   build:
-    runs-on: ubuntu-latest
-
+    runs-on : ubuntu-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18.x'  # Update to the Node.js version you want to use
-
-    - name: Install npm dependencies
-      run: npm install
-
-    - name: Build the code
-      run: npm run build
-
-    - name : Deploy to Github Pages
-      uses : actions/setup-node@v3
-      with : 
-        node-version: '18.x'
-
-    - name: Set up Git
-      run: |
-        git config --global user.email "itzabhinavarya@gmail.com"
-        git config --global user.name "itzabhinavarya"
-
-    - name : Install gh-pages
-      run : npm install gh-pages --save-dev
-
-    - name : Deploy
-      env : 
-        GH_TOKEN : ${{ secrets.GITHUB_TOKEN }}
-      run : npm run deploy
+      - name: Checking Node Version
+        run: npm --version
